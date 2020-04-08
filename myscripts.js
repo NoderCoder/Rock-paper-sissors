@@ -6,7 +6,7 @@ function computerplay() {
             let cAns;
             if (n==0) {cAns="Rock";}
             if (n==1) {cAns="Paper";}
-            if (n==2) {cAns="Sissors";}
+            if (n==2) {cAns="Scissors";}
             return cAns;
     }
 function playRound(playerSelection, computerSelection) {
@@ -15,14 +15,14 @@ function playRound(playerSelection, computerSelection) {
             else {
             switch (playerSelection) {
                 case "Rock":
-                    if (computerSelection == "Sissors") {pAnsS = "Congrats ! you won " + playerSelection + " beats "+ computerSelection +"."; pAnsWL=1;}
+                    if (computerSelection == "Scissors") {pAnsS = "Congrats ! you won " + playerSelection + " beats "+ computerSelection +"."; pAnsWL=1;}
                     else { pAnsS = "Sorry you lost ! " + computerSelection + " beats "+  playerSelection +"."; pAnsWL=0; }
                     break;
                 case "Paper":
                     if (computerSelection == "Rock") {pAnsS = "Congrats ! you won " + playerSelection + " beats "+ computerSelection +"."; pAnsWL=1;}
                     else { pAnsS = "Sorry you lost ! " + computerSelection + " beats "+  playerSelection +"."; pAnsWL=0; }
                     break;
-                case "Sissors":
+                case "":
                     if (computerSelection == "Paper") {pAnsS = "Congrats ! you won " + playerSelection + " beats "+ computerSelection +"."; pAnsWL=1;}
                     else { pAnsS = "Sorry you lost ! " + computerSelection + " beats "+  playerSelection +"."; pAnsWL=0;}
                     break;
@@ -38,12 +38,11 @@ function game() {
     hScore = 0;
     dScore = 0;
 
-    for(i = 1; i<=5; i++ ) {
+    // Loop here to run the code for n num of times
        console.log("Round " + i + " of total of 5 rounds");
 
         //code to actually call the game
-        let a = prompt("Please Enter Rock, paper or Sissors");
-        // let a = "Rock";
+        let a = prompt("Please Enter Rock, paper or Scissors");
         a = a.charAt(0).toUpperCase() + a.substring(1);
         var b = computerplay();
         [Msg , Score] = playRound(a,b);
@@ -62,7 +61,7 @@ function game() {
 
         }
         alert("human Score : " +hScore + "and Computer score : " + cScore + " & draws : " + dScore);
-    }
+
     console.log(hScore);
     console.log(cScore);
     console.log(dScore);
