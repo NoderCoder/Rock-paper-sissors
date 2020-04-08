@@ -2,21 +2,25 @@
 <html>
 <head>
     <title>Rock-Paper-Scissors</title>
-    
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="mainStyle.css">
 
 </head>
+<div id="container">
 <body>
-    <h1>Rock-Paper-Scissors Project</h1>
+    <h1 id="main-heading">Rock-Paper-Scissors Project</h1>
     <p></p>
-    <p>Click the button to play the game.</p>
-
-    <button id="rockButton">Rock</button>
-    <button id="paperButton">Rock</button>
-    <button id="scissorsButton">Rock</button>
-
+    <p id="instructions">Click the button to play the game.</p>
+<div class="icons">
+    <button id="rockButton" class="key">Rock</button>
+    <button id="paperButton" class="key">Paper</button>
+    <button id="scissorsButton" class="key">Scissors</button>
+</div>
+<div id="gameMessage"></div>
 
 
 </body>
-<!-- <script src="myscripts.js"></script> -->
+</div>
+<script src="myscripts.js"></script>
 </html>

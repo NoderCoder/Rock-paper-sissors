@@ -1,3 +1,65 @@
-body {
-    background-color: bisque;
+html {
+    font-size: 10px;
+    min-height: 100vh;
+    background : linear-gradient(35deg, #CCFFFF , #FFCCCC) ; 
+  }
+  
+  body,html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  #main-heading {
+    width:100vw;
+    font-size: 13rem;
+    font-family: 'Rye', cursive;
+    text-align: center;
+    float: auto;
+    border: 0%;
+}
+#instructions{
+    padding-top: 0%;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Rye', cursive;
+}
+
+
+.icons {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .key {
+    border: .4rem solid black;
+    border-radius: .5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    width: 10rem;
+    text-align: center;
+    color: rgb(51, 8, 8);
+    background: rgba(243, 238, 238, 0.13);
+    text-shadow: 0 0 .5rem rgb(240, 196, 196);
+  }
+
+  
+  .playing {
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+  }
+  
+  kbd {
+    display: block;
+    font-size: 4rem;
+  }
+#gameMessage {
+    padding-top: 2%;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Lobster";
 }

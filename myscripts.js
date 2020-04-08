@@ -1,6 +1,4 @@
-//const para = document.querySelector('p');
-
-
+// Functions for the RPS game
 function computerplay() {
             let n = Math.floor(Math.random() * Math.floor(3));
             let cAns;
@@ -11,7 +9,7 @@ function computerplay() {
     }
 function playRound(playerSelection, computerSelection) {
             var pAnsS, pAnsWL;
-            if (playerSelection == computerSelection) { pAnsS= "you both selected " + playerSelection + "."; pAnsWL=2; }
+            if (playerSelection == computerSelection) { pAnsS= "You both selected " + playerSelection + "."; pAnsWL=2; }
             else {
             switch (playerSelection) {
                 case "Rock":
@@ -22,7 +20,7 @@ function playRound(playerSelection, computerSelection) {
                     if (computerSelection == "Rock") {pAnsS = "Congrats ! you won " + playerSelection + " beats "+ computerSelection +"."; pAnsWL=1;}
                     else { pAnsS = "Sorry you lost ! " + computerSelection + " beats "+  playerSelection +"."; pAnsWL=0; }
                     break;
-                case "":
+                case "Scissors":
                     if (computerSelection == "Paper") {pAnsS = "Congrats ! you won " + playerSelection + " beats "+ computerSelection +"."; pAnsWL=1;}
                     else { pAnsS = "Sorry you lost ! " + computerSelection + " beats "+  playerSelection +"."; pAnsWL=0;}
                     break;
@@ -39,15 +37,13 @@ function game() {
     dScore = 0;
 
     // Loop here to run the code for n num of times
-       console.log("Round " + i + " of total of 5 rounds");
 
         //code to actually call the game
-        let a = prompt("Please Enter Rock, paper or Scissors");
+        // let a = prompt("Please Enter Rock, paper or Scissors");
         a = a.charAt(0).toUpperCase() + a.substring(1);
         var b = computerplay();
         [Msg , Score] = playRound(a,b);
         console.log(Msg);
-        console.log(Score);
         switch (Score) {
             case 1:
                 hScore += 1;
@@ -60,12 +56,28 @@ function game() {
                 break;  
 
         }
-        alert("human Score : " +hScore + "and Computer score : " + cScore + " & draws : " + dScore);
+        // alert("human Score : " +hScore + "and Computer score : " + cScore + " & draws : " + dScore);
 
     console.log(hScore);
     console.log(cScore);
     console.log(dScore);
-    
-
+    let gameMsg = document.querySelector("#gameMessage")
+    gameMsg.textContent = Msg;
 }
-game();
+
+//code to  DOM manipulition customElements
+const buttons = document.querySelectorAll(".key");
+buttons.forEach(button => button.addEventListener('click',callgame));
+
+function callgame(e) {
+    a="";
+    if (this.id == "rockButton") {a = "Rock"; }
+    else if (this.id == "paperButton") {a = "Paper";}
+    else if (this.id == "scissorsButton") {a = "Scissors";}
+    game();
+    console.log(this.id);
+}
+
+
+
+
